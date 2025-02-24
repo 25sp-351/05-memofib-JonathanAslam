@@ -2,11 +2,11 @@ CC = clang
 CFLAGS = -g -Wall
 RM = rm -f
 
-main: main.c memoize.c 
-	$(CC) $(CFLAGS) -o main main.c memoize.c 
+main: main.c memoize.c fib.c
+	$(CC) $(CFLAGS) -o main main.c memoize.c fib.c
 
-test_memo: test/test_fib_memo.c memoize.c 
-	$(CC) $(CFLAGS) -o test_memo test/test_fib_memo.c memoize.c
+test_memo: test/test_fib_memo.c memoize.c fib.c
+	$(CC) $(CFLAGS) -o test_memo test/test_fib_memo.c memoize.c fib.c
 
 clean:
 	$(RM) main

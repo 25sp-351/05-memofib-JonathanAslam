@@ -2,18 +2,14 @@
 
 #include <stdio.h>
 
-#define MAX 92
+#include "fib.h"
+
+#define MAX 93
 
 long long int memo[MAX];
 
 function_ptr original_provider;  // point to fib
 function_ptr fib_provider;       // point to cache
-
-long long int fib(int n) {
-    if (n <= 1)
-        return n;
-    return (*fib_provider)(n - 1) + (*fib_provider)(n - 2);
-}
 
 long long int memoize(int number) {
     if (number > MAX)
@@ -30,10 +26,8 @@ function_ptr intialize_memo() {
     return fib_provider = memoize;
 }
 
-
-long long int search_cache(int number){
-    if (memo[number] != -1) {
-        return memo[number]; // if found
-    }
-    return -1; // if not found
+long long int search_cache(int number) {
+    if (number > MAX)
+        return -1;
+    return memo[number];
 }

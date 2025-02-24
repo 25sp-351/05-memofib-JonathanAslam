@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #include "../memoize.h"
+#include "../fib.h"
 
 function_ptr fibonacci_provider;
 

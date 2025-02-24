@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "fib.h"
 #include "memoize.h"
-// #include "fib.h"
 
 #define MAX_INPUT_LENGTH 4
 
