@@ -19,10 +19,10 @@ long long int memoize(int number) {
     return memo[number];
 }
 
-function_ptr intialize_memo() {
+function_ptr intialize_memo(function_ptr op) {
     for (int ix = 0; ix <= MAX; ix++)
         memo[ix] = -1;
-    original_provider   = fib;
+    original_provider   = op;
     return fib_provider = memoize;
 }
 

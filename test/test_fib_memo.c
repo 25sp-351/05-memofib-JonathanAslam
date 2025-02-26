@@ -35,7 +35,8 @@ int test_given_input(int input, long long int expected_value) {
 
 
 int main() {
-    fibonacci_provider = intialize_memo();
+    fibonacci_provider = fib;
+    fibonacci_provider = intialize_memo(fibonacci_provider);
 
     test_given_input(10, 55);
     test_given_input(20, 6765);

@@ -7,7 +7,8 @@
 #define MAX_INPUT_LENGTH 4
 
 int main() {
-    function_ptr fibonacci_provider = intialize_memo();
+    function_ptr fibonacci_provider = fib;
+    fibonacci_provider = intialize_memo(fibonacci_provider);
 
     char input[4];
     int converted_int = 0;
