@@ -27,7 +27,7 @@ function_ptr intialize_memo(function_ptr op) {
 }
 
 long long int search_cache(int number) {
-    if (number > MAX)
+    if (number > MAX || number < 0)
         return -1;
     return memo[number];
 }
